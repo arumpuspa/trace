@@ -39,7 +39,8 @@
                 country: data.sys.country,
                 temp: Math.round(data.main.temp - 273.15)+'C',
                 humid: data.main.humidity,
-                weatherdesc: data.weather[0].description
+                weatherdesc: data.weather[0].description,
+                icon: attr('http://openweathermap.org/img/w/'+data.weather[0].icon+'.png')
               };
               console.log("SUCCESS Connection");
               return that.attachTemplate(false);
