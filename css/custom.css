@@ -1,0 +1,23 @@
+body {
+  }
+
+#searchButton {
+  width: 100%; }
+
+.starter-template {
+  padding: 40px 25px; }
+  .starter-template table {
+    margin-top: 15px; }
+  .starter-template .alert {
+    margin-top: 1%; }
+
+.background-image {
+  height: 290px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url("../img/weather.jpg"); }
+
+@media screen and (max-width: 767px) {
+  .background-image {
+    height: 110px;
+    background-size: 120px; } }

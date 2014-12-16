@@ -1,0 +1,36 @@
+body {
+  padding-top: 55px;
+}
+#searchButton {
+   width: 100%;
+ }
+.starter-template {
+  padding: 40px 25px;
+  table {
+    margin-top: 15px
+  }
+
+  .alert {
+    margin-top: 1%;
+  }
+}
+
+.background-image {
+  height: 290px;
+  //background-size: 100%;
+  //background-size: cover;
+  //-webkit-background-size: cover;
+  //-moz-background-size: cover;
+  //-o-background-size: cover;
+  ////background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url('../img/weather.jpg');
+}
+
+@media screen and (max-width: 767px) {
+  .background-image {
+    height: 110px;
+    background-size: 120px;
+  }
+}
