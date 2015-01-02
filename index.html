@@ -15,12 +15,6 @@
 		<link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="css/bootstrap-theme.css">
         <link rel="stylesheet" href="css/style.css">
-         <style>
-      .moon { fill:#D6D5C0; }
-      .moonback { fill:black;stroke:#fff;stroke-width:1px; }
-      }
-      /* #moon { margin-top: 3em; } */
-    </style>
 		<!-- skin -->
 		<link rel="stylesheet" href="skin/default.css">
         <link href="css/custom.css" rel="stylesheet" media="screen">
@@ -49,187 +43,136 @@
 		</div>
 		<section class="featured">
 			<div class="container"> 
-<!--				<div class="row mar-bot0">-->
+                <!--<div class="row mar-bot0">-->
 					<div class="col-md-6 col-md-offset-3">
 						<div class="align-center">
 							<i class="fa fa-moon-o fa-5x mar-bot20"></i>
 							<h2 class="slogan">Trace</h2>
 							<p>
-							gak mudeng.
+							yeay!
 							</p>
-                                <svg id="moon" style="position:absolute; left:10%; top:10%;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" version="1.1"/>
-
 						</div>
 					</div>
-				</div>
+                <!--</div>-->
 			</div>
 		</section>
 		
-		<!-- services -->
+		<!-- KONTEN -->
 		<section id="section-services" class="section pad-bot30 bg-white">
-		<div class="container">
-            <div id="main" class="starter-template">
-<div id="content">
-<!--<div class="background-image"></div>-->
-<form>
-<div class="row">
-<div class="col-8 col-sm-10 col-lg-10">
-<input autofocus type="search" id="searchCity" class="form-control input-large"
+            <div class="container">
+                <div id="main" class="starter-template">
+                    <div id="content">
+                        
+                        <!--*****************INPUT KOTA***************-->
+                        <form>
+                            <div class="row">
+                                <div class="col-8 col-sm-10 col-lg-10">
+                                    <input autofocus type="search" id="searchCity" class="form-control input-large"
                            placeholder="Enter a zipcode, name of city or country">
-</div>
-<div class="col-4 col-sm-2 col-lg-2">
-<input type="submit" id="searchButton" class="btn btn-large" value="Go"/>
-</div>
-</div>
-    <br>
-</form>
-<div id="output"></div>
-<script id="weather-template" type="text/x-handlebars-template">
-            <table class="table table-hover">
-                {{#if msg}}
-                <h3 class="alert alert-info" data-dismiss="alert">{{msg}} <a class="close" href="#">x</a></h3>
-                {{else}}
-                <h3>
-                    {{#if city}}
-                    {{city}}, {{country}}
-                    {{else}}
-                    {{country}}
-                    {{/if}}
-                </h3>
-                <thead>
-                <tr>
-                    <th width="15%">
-                        Temperature
-                    </th>
-                    <th width="15%">
-                        Humidity
-                    </th>
-                    <th width="70%">
-                        Description
-                    </th>
+                                </div>
+                                <div class="col-4 col-sm-2 col-lg-2">
+                                    <input type="submit" id="searchButton" class="btn btn-large" value="Search"/>
+                                </div>
+                            </div>
+                            <br>
+                        </form>
+                        
+                        <!--****************OUTPUT WEATHER*************-->
+                        <div id="output"></div>
+                            <script id="weather-template" type="text/x-handlebars-template">
+                                <table class="table table-hover">
+                                    {{#if msg}}
+                                        <h3 class="alert alert-info" data-dismiss="alert">{{msg}} <a class="close" href="#">x</a></h3>
+                                    {{else}}
+                                        <h3>
+                                            {{#if city}}
+                                                {{city}}, {{country}}
+                                            {{else}}
+                                                {{country}}
+                                            {{/if}}
+                                        </h3>
+                                        <thead>
+                                            <tr>
+                                            <th width="15%">
+                                                Temperature
+                                            </th>
+                                            <th width="15%">
+                                                Humidity
+                                            </th>
+                                            <th width="70%">
+                                                Description
+                                            </th>
 
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>
-                        {{temp}}
-                    </td>
-                    <td>
-                        {{humid}}
-
-                    </td>
-                    <td>
-                        {{weatherdesc}}
-                        {{{icon}}}
-                    </td>
-
-                </tr>
-                </tbody>
-                {{/if}}
-            </table>
-        </script>
-    <div id="ex1" align="center"></div>
-    <script type="text/javascript">
-function example_1(moon){
-	var day = new Date().getDate()
-	var dayWeek=moon.phase[day].dayWeek	/* var dayWeek=(new Date().getDay()+6)%7 */
-	var html="<div class='moon'>"
-	html+="<div>"+moon.nameDay[dayWeek]+"</div>"
-	html+="<div>"+ day + " " + moon ['monthName'] + " "+year +"</div>"
-	html+=moon.phase[day].svg
-	html+="<div>"+moon.phase[day].phaseName + " "+ Math.round(moon.phase[day].lighting)+"%</div>"
-	html+="</div>"
-	$("#ex1").html(html)
-}
-</script>
-</div>
-</div>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                            <td>
+                                                {{temp}}
+                                            </td>
+                                            <td>
+                                                {{humid}}
+                                            </td>
+                                            <td>
+                                                {{weatherdesc}}
+                                                {{{icon}}}
+                                            </td>
+                                            </tr>
+                                        </tbody>
+                                    {{/if}}
+                                </table>
+                            </script>
+                        
+                        <!--****************FASE BULAN*************-->
+                        <div id="ex1" align="center"></div>
+                            <script type="text/javascript">
+                                function example_1(moon){
+                                    var day = new Date().getDate()
+                                    var dayWeek=moon.phase[day].dayWeek	/* var dayWeek=(new Date().getDay()+6)%7 */
+                                    var html="<div class='moon'>"
+                                    html+="<div>"+moon.nameDay[dayWeek]+"</div>"
+                                    html+="<div>"+ day + " " + moon ['monthName'] + " "+year +"</div>"
+                                    html+=moon.phase[day].svg
+                                    html+="<div>"+moon.phase[day].phaseName + " "+ Math.round(moon.phase[day].lighting)+"%</div>"
+                                    html+="</div>"
+                                    $("#ex1").html(html)
+                                }
+                            </script>
+    
+                    </div>
 				</div>
-					
-			
-			</div>	
-
-		</div>
+            </div>	
 		</section>
 
+        <!--FOOTER-->
         <section id="footer" class="section footer">
-		<div class="container">
-
-			<div class="row align-center copyright">
+            <div class="container">
+                <div class="row align-center copyright">
 					<div class="col-sm-12"><p>Copyright &copy; 2014. <br>Theme by <a href="http://bootstraptaste.com">Bootstraptaste</a>.<br> openWeather.js by <a href="https://github.com/michael-lynch/open-weather">Michael Lynch</a>.</p></div>
-			</div>
-		</div>
+			     </div>
+            </div>
+        </section>
 
-	</section>
+        <a href="#header" class="scrollup"><i class="fa fa-chevron-up"></i></a>	
 
-<a href="#header" class="scrollup"><i class="fa fa-chevron-up"></i></a>	
-
-	<script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-	<script src="js/jquery.js"></script>
-	<script src="js/jquery.easing.1.3.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
-	<script src="js/jquery.isotope.min.js"></script>
-	<script src="js/jquery.nicescroll.min.js"></script>
-	<script src="js/fancybox/jquery.fancybox.pack.js"></script>
-	<script src="js/skrollr.min.js"></script>		
-	<script src="js/jquery.scrollTo-1.4.3.1-min.js"></script>
-	<script src="js/jquery.localscroll-1.2.7-min.js"></script>
-	<script src="js/stellar.js"></script>
-	<script src="js/jquery.appear.js"></script>
-	<script src="js/validate.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/handlebars.js"></script> 
-    <script src="js/custom.js"></script>
-    <script src="js/moonphase.js"></script>
+        <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="js/jquery.js"></script>
+        <script src="js/jquery.easing.1.3.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
+        <script src="js/jquery.isotope.min.js"></script>
+        <script src="js/jquery.nicescroll.min.js"></script>
+        <script src="js/fancybox/jquery.fancybox.pack.js"></script>
+        <script src="js/skrollr.min.js"></script>		
+        <script src="js/jquery.scrollTo-1.4.3.1-min.js"></script>
+        <script src="js/jquery.localscroll-1.2.7-min.js"></script>
+        <script src="js/stellar.js"></script>
+        <script src="js/jquery.appear.js"></script>
+        <script src="js/validate.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/handlebars.js"></script> 
+        <script src="js/custom.js"></script>
+        <script src="js/moonphase.js"></script>
     
-    <!--<script type="text/javascript" src="moon-phase.js" charset="UTF-8"></script>
-  <script type="text/javascript" src="riset.js" charset="UTF-8"></script>
-  <script type="text/javascript" charset="UTF-8">
-  // this only get run if we can get a location ... should have a fallback if they don't have location.?
-  var success = function(position) {
-    var lon = position.coords.longitude;
-    var lat = position.coords.latitude;
-    var today = today || new Date();
-    var year = today.getFullYear();
-    var day = today.getDate();
-    var month = today.getMonth()+1; // 0 index :(
-    var hours = today.getHours();
-    var tz = -today.getTimezoneOffset()/60;
-    var mj = mjd(day, month, year, 0.0);
-    var riset = find_moonrise_set(mj, tz, lon, lat);
-    var moonrise = riset[0];
-    var moonset = riset[1];
-    document.getElementById('moonrise').innerHTML += moonrise;
-    document.getElementById('moonset').innerHTML += moonset;
-    document.getElementById('riseset').style.visibility = 'visible';
-    var sunrs = find_sun_and_twi_events_for_date(mj, tz, lon, lat).split(" ");
-    var sunrise = sunrs[1];
-    var sunset = sunrs[2];
-    document.getElementById('sunrise').innerHTML += sunrise;
-    document.getElementById('sunset').innerHTML += sunset;
-    document.getElementById('date').innerHTML += year + "/" + month + "/" + day;
-    document.getElementById('zodiac').innerHTML += zodiac_sign(today);
-    document.getElementById('mooncent').innerHTML += (moon_day(today)*100).toFixed(2) + "%";
-  };
-
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(success);
-  }
-  // http://tutorialzine.com/2010/03/centering-div-vertically-and-horizontally/
-  function center(){
-    moonelement=document.getElementById('moon')
-    moonelement.style.position='absolute';
-    moonelement.style.left=((document.body.clientWidth - moonelement.offsetWidth)/2);
-    moonelement.style.top=((window.innerHeight - moonelement.offsetHeight)/2);
-    console.log(document.body.clientWidth);
-    console.log(Math.max( window.innerHeight, document.body.clientHeight ));
-  }
-  window.onresize = function(){
-    center();
-  };
-  center();
-  </script>-->
 	</body>
 </html>
