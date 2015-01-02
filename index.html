@@ -56,7 +56,9 @@
 							<h2 class="slogan">Trace</h2>
 							<p>
 							gak mudeng.
-							</p>	
+							</p>
+                                <svg id="moon" style="position:absolute; left:10%; top:10%;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" version="1.1"/>
+
 						</div>
 					</div>
 				</div>
@@ -126,7 +128,21 @@
                 </tbody>
                 {{/if}}
             </table>
-        </script> 
+        </script>
+    <div id="ex1" align="center"></div>
+    <script type="text/javascript">
+function example_1(moon){
+	var day = new Date().getDate()
+	var dayWeek=moon.phase[day].dayWeek	/* var dayWeek=(new Date().getDay()+6)%7 */
+	var html="<div class='moon'>"
+	html+="<div>"+moon.nameDay[dayWeek]+"</div>"
+	html+="<div>"+ day + " " + moon ['monthName'] + " "+year +"</div>"
+	html+=moon.phase[day].svg
+	html+="<div>"+moon.phase[day].phaseName + " "+ Math.round(moon.phase[day].lighting)+"%</div>"
+	html+="</div>"
+	$("#ex1").html(html)
+}
+</script>
 </div>
 </div>
 				</div>
@@ -166,7 +182,9 @@
     <script src="js/main.js"></script>
     <script src="js/handlebars.js"></script> 
     <script src="js/custom.js"></script>
-    <script type="text/javascript" src="moon-phase.js" charset="UTF-8"></script>
+    <script src="js/moonphase.js"></script>
+    
+    <!--<script type="text/javascript" src="moon-phase.js" charset="UTF-8"></script>
   <script type="text/javascript" src="riset.js" charset="UTF-8"></script>
   <script type="text/javascript" charset="UTF-8">
   // this only get run if we can get a location ... should have a fallback if they don't have location.?
@@ -212,6 +230,6 @@
     center();
   };
   center();
-  </script>
+  </script>-->
 	</body>
 </html>
