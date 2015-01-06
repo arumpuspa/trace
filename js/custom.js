@@ -18,7 +18,6 @@
           return searchBox.val("").focus();
         });
       },
-        
       convertToFarenheit: function(val) {
         return (((val - 273.15) * 1.8) + 32).toFixed(2) + " \u00B0F";
       },
@@ -38,10 +37,9 @@
               that.weather = {
                 city: data.name,
                 country: data.sys.country,
-                temp: Math.round(data.main.temp - 273.15) + " \u00B0C",
+                temp: Math.round(data.main.temp - 273.15)+'C',
                 humid: data.main.humidity,
-                weatherdesc: data.weather[0].description,
-                icon: that.attr('http://openweathermap.org/img/w/'+data.weather[0].icon+'.png')
+                weatherdesc: data.weather[0].description
               };
               console.log("SUCCESS Connection");
               return that.attachTemplate(false);

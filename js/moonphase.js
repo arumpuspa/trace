@@ -31,7 +31,7 @@ function sendAndRead(){
 		if (typeof example_1 == "function")example_1(moon)
 		if (typeof example_2 == "function")example_2(moon)
 		if (typeof example_3 == "function")example_3(moon)
-		$(".moon").css({backgroundColor:"#FFFFFF",display:"inline-table",padding:"10px 20px",color:"#000000",margin:"1px"})
+		$(".moon").css({backgroundColor:"#666666",display:"inline-table",padding:"10px 20px",color:"#FFFFFF",margin:"1px"})
 		$(".phaseLimit").css({position:"absolute",float:"left"})		
 	})
 	.fail(function(jqXHR, textStatus) {
