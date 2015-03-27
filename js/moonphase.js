@@ -2,9 +2,9 @@ var lang  = 'en' // 'ca' , 'es' , 'en'
 var month = new Date().getMonth() + 1 // 1 - 12
 var year  = new Date().getFullYear()
 
-var svgSize        = 50 // pixels
-var svgLightColor  = "#FFFF88"
-var svgShadeColor  = "#111111"
+var svgSize        = 150 // pixels
+var svgLightColor  = "#f2ef42"
+var svgShadeColor  = "#202020"
 var svgSizeQuarter = 20 // pixels
 
 $(document).ready(function() {
@@ -31,7 +31,7 @@ function sendAndRead(){
 		if (typeof example_1 == "function")example_1(moon)
 		if (typeof example_2 == "function")example_2(moon)
 		if (typeof example_3 == "function")example_3(moon)
-		$(".moon").css({backgroundColor:"#666666",display:"inline-table",padding:"10px 20px",color:"#FFFFFF",margin:"1px"})
+		$(".moon").css({backgroundColor:"#ffffff",display:"inline-table",padding:"10px 20px",color:"#808080",margin:"1px"})
 		$(".phaseLimit").css({position:"absolute",float:"left"})		
 	})
 	.fail(function(jqXHR, textStatus) {

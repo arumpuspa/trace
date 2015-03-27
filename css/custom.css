@@ -5,9 +5,9 @@ body {
   width: 100%; }
 
 .starter-template {
-  padding: 40px 25px; }
+  padding: 0 px; }
   .starter-template table {
-    margin-top: 15px; }
+    margin-top: 11px; }
   .starter-template .alert {
     margin-top: 1%; }
 
@@ -17,6 +17,13 @@ body {
   background-repeat: no-repeat;
   background-image: url("../img/weather.jpg"); }
 
+.jumbotron { 
+
+ background-color: #ff1789; 
+
+ color: white; 
+
+ } 
 @media screen and (max-width: 767px) {
   .background-image {
     height: 110px;
