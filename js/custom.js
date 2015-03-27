@@ -39,10 +39,7 @@
                 country: data.sys.country,
                 temp: Math.round(data.main.temp - 273.15)+'C',
                 humid: data.main.humidity,
-                weatherdesc: data.weather[0].description,
-                wind: data.wind.speed,
-                sunrise: data.sys.sunrise,
-                sunset: data.sys.sunset
+                weatherdesc: data.weather[0].description
               };
               console.log("SUCCESS Connection");
               return that.attachTemplate(false);
