@@ -21,6 +21,7 @@
       convertToFarenheit: function(val) {
         return (((val - 273.15) * 1.8) + 32).toFixed(2) + " \u00B0F";
       },
+        
       gotInput: function(city) {
         this.url = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&callback=?";
         return this.fetch();
@@ -37,11 +38,11 @@
               that.weather = {
                 city: data.name,
                 country: data.sys.country,
-                temp: Math.round(data.main.temp - 273.15)+'C',
-                humid: data.main.humidity,
+                temp: Math.round(data.main.temp - 273.15)+" \u00B0C",
+                humid: data.main.humidity+"%",
                 weatherdesc: data.weather[0].description,
-                wind: data.wind.speed,
-                sunrise: data.sys.sunrise,
+                wind: data.wind.speed+" mpH",
+                sunrise: (data.sys.sunrise),
                 sunset: data.sys.sunset
               };
               console.log("SUCCESS Connection");
